@@ -10,6 +10,46 @@
 <body>
 
     Teste live server 
+    <div id="app">
+
+        {{mensagem}} <br>
+        Logado: {{ logado }} <br>
+        Hobbie: {{ hobbies[2]}}
+        Perfil: {{ perfil.cursos[1].nome}}
+        
+
+    </div>
+
+
+    <script>
+        const vm = new Vue({
+            el: '#app',  // para selecionar por id
+            data: { // vai guardar as variaveis e atributos reativos
+                mensagem: 'Primeiro template controlado pelo view',
+                valorTotal: 150.47,
+                logado: false,
+                hobbies: [
+                    'Dormir',
+                    'Colecionar videos',
+                    'Bateria',
+                    'Computador'
+                ],
+                perfil: {
+                    nome: 'Elimar Santos',
+                    site: 'google.com.br',
+                    idade: 31,
+                    cursos: [
+                        { nome: 'Laravel', cargaHoraria: '50 horas'},
+                        { nome: 'Vue', cargaHoraria: '100 horas'}
+                    ]
+                }
+            }
+            
+        }); // viewmodel
+
+        console.log(vm);
+
+    </script>
     
 </body>
 </html>
